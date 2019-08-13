@@ -19,9 +19,15 @@ const TodoList = () => {
     <div>
       <h1>Todo list</h1>
       <ul>
-        {todoList.map(todo => (
-          <li>{todo.todo_description}</li>
-        ))}
+        {todoList.map(item =>
+          item.todo_completed ? (
+            <li>
+              <strike>{item.todo_description}</strike>
+            </li>
+          ) : (
+            <li>{item.todo_description}</li>
+          )
+        )}
       </ul>
     </div>
   );

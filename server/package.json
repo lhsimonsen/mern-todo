@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server",
+    "setupdb": "cd .. && mkdir -p /data/db && sudo chown -R `id -u` /data/db && sudo chmod -R go+w /data/db && lsof -t -i tcp:27017 | xargs kill && mongod",
+    "startdb": "lsof -t -i tcp:27017 | xargs kill && mongod"
   },
   "author": "",
   "license": "ISC",
